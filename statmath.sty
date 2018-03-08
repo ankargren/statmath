@@ -1,27 +1,41 @@
+%%
+%% This is file `statmath.sty',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% statmath.dtx  (with options: `package')
+%% This is a generated file.
+%% Copyright (C) 2018 by Sebastian Ankargren
+%% This file may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either
+%% version 1.3 of this license or (at your option) any later
+%% version.  The latest version of this license is in:
+%% http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of
+%% LaTeX version 2005/12/01 or later.
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesPackage{statmath}[2018/03/06]
-   
+\ProvidesPackage{statmath}
+[2018/03/08 v0.1 Statistical notation and mathematics]
 \RequirePackage{amsmath}
 \RequirePackage{bm}%
 
 \DeclareOption{abcbm}{%
-   \let\abcbf\bm
+   \let\abcbf\bm%
 }
 \DeclareOption{greekbm}{%
    \let\greekbf\bm%
 }
 \DeclareOption{abcbf}{%
- \let\abcbf\mathbf
+ \let\abcbf\mathbf%
 }
 \DeclareOption{greekbs}{%
  \let\greekbf\boldsymbol%
 }
- 
-\ExecuteOptions{abcbf}
-\ExecuteOptions{greekbs}
- 
+
+\ExecuteOptions{abcbf,greekbs}
+
 \ProcessOptions\relax
- 
 \newcommand{\bfA}{\abcbf A}
 \newcommand{\bfB}{\abcbf B}
 \newcommand{\bfC}{\abcbf C}
@@ -48,7 +62,6 @@
 \newcommand{\bfX}{\abcbf X}
 \newcommand{\bfY}{\abcbf Y}
 \newcommand{\bfZ}{\abcbf Z}
-
 \newcommand{\bfa}{\abcbf a}
 \newcommand{\bfb}{\abcbf b}
 \newcommand{\bfc}{\abcbf c}
@@ -73,9 +86,8 @@
 \newcommand{\bfv}{\abcbf v}
 \newcommand{\bfw}{\abcbf w}
 \newcommand{\bfx}{\abcbf x}
-\newcommand{\bfz}{\abcbf z}
 \newcommand{\bfy}{\abcbf y}
-
+\newcommand{\bfz}{\abcbf z}
 \newcommand{\bfalpha}{\greekbf \alpha}
 \newcommand{\bfbeta}{\greekbf \beta}
 \newcommand{\bfdelta}{\greekbf \delta}
@@ -105,7 +117,6 @@
 \newcommand{\bfpsi}{\greekbf \psi}
 \newcommand{\bfomega}{\greekbf \omega}
 \newcommand{\bfiota}{\greekbf \iota}
-
 \newcommand{\bfGamma}{\greekbf \Gamma}
 \newcommand{\bfDelta}{\greekbf \Delta}
 \newcommand{\bfTheta}{\greekbf \Theta}
@@ -117,26 +128,21 @@
 \newcommand{\bfPhi}{\greekbf \Phi}
 \newcommand{\bfPsi}{\greekbf \Psi}
 \newcommand{\bfOmega}{\greekbf \Omega}
-
 \newcommand{\bfzero}{\greekbf 0}
-
 \DeclareMathOperator{\cov}{Cov}
 \DeclareMathOperator{\E}{E}
 \DeclareMathOperator{\V}{V}
-
-\DeclareMathOperator{\tr}{tr}
-\DeclareMathOperator{\vc}{vec}
-\DeclareMathOperator{\vcs}{vecs}
-\DeclareMathOperator{\vch}{vech}
-
-\DeclareMathOperator{\argmin}{arg\,min}
-\DeclareMathOperator{\argmax}{arg\,max}
-\DeclareMathOperator{\diag}{diag}
-
 \newcommand{\inas}{\overset{a.s.}{\to}}
 \newcommand{\indist}{\overset{d}{\to}}
 \newcommand{\inprob}{\overset{p}{\to}}
 \DeclareMathOperator{\plim}{plim}
-
-
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\vc}{vec}
+\DeclareMathOperator{\vcs}{vecs}
+\DeclareMathOperator{\vch}{vech}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\argmin}{arg\,min}
+\DeclareMathOperator{\argmax}{arg\,max}
 \endinput
+%%
+%% End of file `statmath.sty'.
