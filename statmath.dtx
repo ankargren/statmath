@@ -59,28 +59,63 @@
 % \title{The \textsf{statmath} package\thanks{This document
 %   corresponds to \textsf{statmath}~\fileversion,
 %   dated \filedate.}}
-% \author{Sebastian Ankargren\\ \texttt{sebastian.ankargren@statistik.uu.se}}
+% \author{Sebastian Ankargren\\ \texttt{sebastian.ankargren@statistics.uu.se}}
 %
 % \maketitle
 %
 % \begin{abstract}
-%   Put text here.
+%   Applied and theoretical papers in statistics usually contain a number of notational conventions which are currently lacking in the popular |amsmath| package. This package provides commands for such standard statistical-mathematical language, including bold Roman and Greek letters, convergence symbols, matrix operations. 
 % \end{abstract}
 %
 % \section{Introduction}
 %
-% Put text here.
+% Applied and theoretical papers in statistics usually contain a number of notational conventions which are currently lacking in the popular |amsmath| package. The seasoned \LaTeX{} user will see that the provided commands are simple, almost trivial, but will hopefully offer less cluttered preambles as well as a welcome help for novice users.
 %
 % \section{Usage}
 %
 % \DescribeMacro{\bfA}
-% Bold upper case: $\bfA$
-%
+% Capital Roman letter: $\bfA$\\
+% \DescribeMacro{\bfa}
+% Lower-case Roman letter: $\bfa$\\
+% \DescribeMacro{\bfGamma}
+% Capital Greek letter: $\bfGamma$\\
+% \DescribeMacro{\bfalpha}
+% Lower-case Greek letter: $\bfalpha$
+% \DescribeMacro{\bfzero}
+% Bold zero: $\bfzero$\\
+% \DescribeMacro{\cov}
+% Covariance: $\cov(X, Y)$\\
+% \DescribeMacro{\E}
+% Expectation: $\E(X)$\\
+% \DescribeMacro{\V}
+% Variance: $\V(X)$\\
+% \DescribeMacro{\inas}
+% Convergence almost surely: $X_n \inas X$\\
+% \DescribeMacro{\inprob}
+% Convergence in probability: $X_n \inprob X$\\
+% \DescribeMacro{\indist}
+% Convergence in distribution: $X_n \indist X$\\
+% \DescribeMacro{\plim}
+% Probability limit: $\plim X_n = X$\\
+% \DescribeMacro{\tr}
+% Trace of matrix: $\tr(\bfA)$\\
+% \DescribeMacro{\vc}
+% Vectorization of matrix: $\vc(\bfA)$\\
+% \DescribeMacro{\vcs}
+% Strict half-vectorization of matrix: $\vcs(\bfA)$\\
+% \DescribeMacro{\vch}
+% Half-vectorization of matrix: $\vch(\bfA)$\\
+% \DescribeMacro{\diag}
+% Diagonal of matrix: $\diag(\bfA)$\\
+% \DescribeMacro{\argmin}
+% Minimize argument: $\hat{\theta}=\argmin_{\theta\in\Theta}f(\theta)$\\
+% \DescribeMacro{\argmax}
+% Maximize argument: $\hat{\theta}=\argmax_{\theta\in\Theta}f(\theta)$\\
 %
 % \StopEventually{\PrintIndex}
 %
 % \section{Implementation}
-% The default is to use \texttt{mathbf} for Roman letters and \texttt{boldsymbol} for Greek letters. Both can be changed (individually) to \texttt{bm}. 
+% The default is to use |\mathbf| for Roman letters and |\boldsymbol| for Greek letters. Both can be changed (individually) to |\bm|. 
 %    \begin{macrocode}
 \RequirePackage{amsmath}
 \RequirePackage{bm}%
@@ -102,6 +137,7 @@
  
 \ProcessOptions\relax
 %    \end{macrocode}
+% \subsection{Bold letters and symbols}
 %    \begin{macro}{\bfA}
 % Capital letters are obtained by |\bfA|, |\bfB|, etc. The command |\abcbf| is either |\textbf| or |\bm|, depending on options |abcbf| or |abcbm|. 
 %    \begin{macrocode}
@@ -198,38 +234,99 @@
 \newcommand{\bfiota}{\greekbf \iota}
 %    \end{macrocode}
 %    \end{macro}
-%    \begin{macro}{\bfalpha}
-% Lower-case Greek letters are obtained by |\bfalpha|, |\bfbeta|, etc. The command |\greekbf| is either |\boldsymbol| or |\bm|, depending on options |greekbs| or |greekbm|. 
+%    \begin{macro}{\bfGamma}
+% Capital Greek letters are obtained by |\bfGamma|, |\bfDelta|, etc. The command |\greekbf| is either |\boldsymbol| or |\bm|, depending on options |greekbs| or |greekbm|. 
 %    \begin{macrocode}
-\newcommand{\bfalpha}{\greekbf \alpha}
-\newcommand{\bfbeta}{\greekbf \beta}
-\newcommand{\bfdelta}{\greekbf \delta}
-\newcommand{\bfepsilon}{\greekbf \epsilon}
-\newcommand{\bfvarepsilon}{\greekbf \varepsilon}
-\newcommand{\bfzeta}{\greekbf \zeta}
-\newcommand{\bfeta}{\greekbf \eta}
-\newcommand{\bftheta}{\greekbf \theta}
-\newcommand{\bfvartheta}{\greekbf \vartheta}
-\newcommand{\bfgamma}{\greekbf \gamma}
-\newcommand{\bfkappa}{\greekbf \kappa}
-\newcommand{\bflambda}{\greekbf \lambda}
-\newcommand{\bfmu}{\greekbf \mu}
-\newcommand{\bfnu}{\greekbf \nu}
-\newcommand{\bfxi}{\greekbf \xi}
-\newcommand{\bfpi}{\greekbf \pi}
-\newcommand{\bfvarpi}{\greekbf \varpi}
-\newcommand{\bfrho}{\greekbf \rho}
-\newcommand{\bfvarrho}{\greekbf \varrho}
-\newcommand{\bfsigma}{\greekbf \sigma}
-\newcommand{\bfvarsigma}{\greekbf \varsigma}
-\newcommand{\bftau}{\greekbf \tau}
-\newcommand{\bfupsilon}{\greekbf \upsilon}
-\newcommand{\bfphi}{\greekbf \phi}
-\newcommand{\bfvarphi}{\greekbf \varphi}
-\newcommand{\bfchi}{\greekbf \chi}
-\newcommand{\bfpsi}{\greekbf \psi}
-\newcommand{\bfomega}{\greekbf \omega}
-\newcommand{\bfiota}{\greekbf \iota}
+\newcommand{\bfGamma}{\greekbf \Gamma}
+\newcommand{\bfDelta}{\greekbf \Delta}
+\newcommand{\bfTheta}{\greekbf \Theta}
+\newcommand{\bfLambda}{\greekbf \Lambda}
+\newcommand{\bfXi}{\greekbf \Xi}
+\newcommand{\bfPi}{\greekbf \Pi}
+\newcommand{\bfSigma}{\greekbf \Sigma}
+\newcommand{\bfUpsilon}{\greekbf \Upsilon}
+\newcommand{\bfPhi}{\greekbf \Phi}
+\newcommand{\bfPsi}{\greekbf \Psi}
+\newcommand{\bfOmega}{\greekbf \Omega}
+%    \end{macrocode}
+%    \end{macro}
+%    \begin{macro}{\bfzero}
+% Bold zero. The command |\greekbf| is either |\boldsymbol| or |\bm|, depending on options |greekbs| or |greekbm|. 
+%    \begin{macrocode}
+\newcommand{\bfzero}{\greekbf 0}
+%    \end{macrocode}
+%    \end{macro}
+% \subsection{Statistical operators and concepts}
+% Statistical operators for covariance, expectation and variance.
+%    \begin{macro}{\cov}
+%    \begin{macrocode}
+\DeclareMathOperator{\cov}{Cov}
+%    \end{macrocode}
+%    \end{macro}
+%    \begin{macro}{\E}
+%    \begin{macrocode}
+\DeclareMathOperator{\E}{E}
+%    \end{macrocode}
+%    \end{macro}
+%    \begin{macro}{\V}
+%    \begin{macrocode}
+\DeclareMathOperator{\V}{V}
+%    \end{macrocode}
+%    \end{macro}
+%    \begin{macro}{\inas}
+%    \begin{macrocode}
+\newcommand{\inas}{\overset{a.s.}{\to}}
+%    \end{macrocode}
+%    \end{macro}
+%    \begin{macro}{\inprob}
+%    \begin{macrocode}
+\newcommand{\indist}{\overset{d}{\to}}
+%    \end{macrocode}
+%    \end{macro}
+%    \begin{macro}{\indist}
+%    \begin{macrocode}
+\newcommand{\inprob}{\overset{p}{\to}}
+%    \end{macrocode}
+%    \end{macro}
+%    \begin{macro}{\plim}
+%    \begin{macrocode}
+\DeclareMathOperator{\plim}{plim}
+%    \end{macrocode}
+%    \end{macro}
+% \subsection{Matrix and mathematical operators}
+%    \begin{macro}{\tr}
+%    \begin{macrocode}
+\DeclareMathOperator{\tr}{tr}
+%    \end{macrocode}
+%    \end{macro}
+%    \begin{macro}{\vc}
+%    \begin{macrocode}
+\DeclareMathOperator{\vc}{vec}
+%    \end{macrocode}
+%    \end{macro}
+%    \begin{macro}{\vcs}
+%    \begin{macrocode}
+\DeclareMathOperator{\vcs}{vecs}
+%    \end{macrocode}
+%    \end{macro}
+%    \begin{macro}{\vch}
+%    \begin{macrocode}
+\DeclareMathOperator{\vch}{vech}
+%    \end{macrocode}
+%    \end{macro}
+%    \begin{macro}{\diag}
+%    \begin{macrocode}
+\DeclareMathOperator{\diag}{diag}
+%    \end{macrocode}
+%    \end{macro}
+%    \begin{macro}{\argmin}
+%    \begin{macrocode}
+\DeclareMathOperator{\argmin}{arg\,min}
+%    \end{macrocode}
+%    \end{macro}
+%    \begin{macro}{\argmax}
+%    \begin{macrocode}
+\DeclareMathOperator{\argmax}{arg\,max}
 %    \end{macrocode}
 %    \end{macro}
 %
