@@ -12,7 +12,6 @@
 \indexentry{plim=\verb!*+\plim+|usage}{1}
 \indexentry{tr=\verb!*+\tr+|usage}{1}
 \indexentry{vc=\verb!*+\vc+|usage}{1}
-\indexentry{vcs=\verb!*+\vcs+|usage}{1}
 \indexentry{RequirePackage=\verb!*+\RequirePackage+}{1}
 \indexentry{RequirePackage=\verb!*+\RequirePackage+}{2}
 \indexentry{DeclareOption=\verb!*+\DeclareOption+}{4}
@@ -73,13 +72,14 @@
 \indexentry{newcommand=\verb!*+\newcommand+}{32}
 \indexentry{bfM=\verb!*+\bfM+}{32}
 \indexentry{abcbf=\verb!*+\abcbf+}{32}
-\indexentry{newcommand=\verb!*+\newcommand+}{33}
-\indexentry{bfN=\verb!*+\bfN+}{33}
-\indexentry{abcbf=\verb!*+\abcbf+}{33}
+\indexentry{vcs=\verb!*+\vcs+|usage}{2}
 \indexentry{vch=\verb!*+\vch+|usage}{2}
 \indexentry{diag=\verb!*+\diag+|usage}{2}
 \indexentry{argmin=\verb!*+\argmin+|usage}{2}
 \indexentry{argmax=\verb!*+\argmax+|usage}{2}
+\indexentry{newcommand=\verb!*+\newcommand+}{33}
+\indexentry{bfN=\verb!*+\bfN+}{33}
+\indexentry{abcbf=\verb!*+\abcbf+}{33}
 \indexentry{newcommand=\verb!*+\newcommand+}{34}
 \indexentry{bfO=\verb!*+\bfO+}{34}
 \indexentry{abcbf=\verb!*+\abcbf+}{34}
