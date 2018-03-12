@@ -18,7 +18,7 @@
 % \iffalse
 %<package>\NeedsTeXFormat{LaTeX2e}
 %<package>\ProvidesPackage{statmath}
-%<package>[2018/03/08 v0.1 Statistical notation and mathematics]
+%<package>[2018/03/12 v0.2 Statistical notation and mathematics]
 %
 %<*driver>
 \documentclass{ltxdoc}
@@ -51,7 +51,7 @@
 %  Right brace   \}     Tilde         \~}
 %
 %
-% \changes{v1.0}{2018/03/08}{Initial version}
+% \changes{v0.1}{2018/03/08}{Initial version}
 %
 % \GetFileInfo{statmath.sty}
 %
@@ -108,6 +108,10 @@
 % Half-vectorization of matrix: $\vch(\bfA)$\\
 % \DescribeMacro{\diag}
 % Diagonal of matrix: $\diag(\bfA)$\\
+% \DescribeMacro{\det}
+% Determinant of matrix: $\det(\bfA)$\\
+% \DescribeMacro{\rank}
+% Rank of matrix: $\rank(\bfA)$\\
 % \DescribeMacro{\argmin}
 % Minimize argument: $\hat{\theta}=\argmin_{\theta\in\Theta}f(\theta)$\\
 % \DescribeMacro{\argmax}
@@ -119,6 +123,7 @@
 % The default is to use |\mathbf| for Roman letters and |\boldsymbol| for Greek letters. Both can be changed (individually) to |\bm|. 
 %    \begin{macrocode}
 \RequirePackage{amsmath}
+\RequirePackage{bbm}
 \RequirePackage{bm}%
 
 \DeclareOption{abcbm}{%
@@ -444,6 +449,7 @@
 %    \begin{macrocode}
 \DeclareMathOperator{\cov}{Cov}
 \DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\MSE}{MSE}
 \DeclareMathOperator{\V}{V}
 %    \end{macrocode}
 %    \end{macro}
@@ -454,9 +460,9 @@
 %    \begin{macro}{\indist}
 %    \begin{macro}{\plim}
 %    \begin{macrocode}
-\newcommand{\inas}{\overset{a.s.}{\to}}
-\newcommand{\indist}{\overset{d}{\to}}
-\newcommand{\inprob}{\overset{p}{\to}}
+\newcommand{\inas}{\overset{\scriptstyle a.s.}{\longrightarrow}}
+\newcommand{\indist}{\overset{\scriptstyle d}{\longrightarrow}}
+\newcommand{\inprob}{\overset{\scriptstyle p}{\longrightarrow}}
 \DeclareMathOperator{\plim}{plim}
 %    \end{macrocode}
 %    \end{macro}
@@ -469,13 +475,18 @@
 %    \begin{macro}{\vcs}
 %    \begin{macro}{\vch}
 %    \begin{macro}{\diag}
+%    \begin{macro}{\det}
+%    \begin{macro}{\rank}
 %    \begin{macrocode}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\vc}{vec}
 \DeclareMathOperator{\vcs}{vecs}
 \DeclareMathOperator{\vch}{vech}
 \DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\rank}{rank}
 %    \end{macrocode}
+%    \end{macro}
+%    \end{macro}
 %    \end{macro}
 %    \end{macro}
 %    \end{macro}
@@ -483,10 +494,81 @@
 %    \end{macro}
 %    \begin{macro}{\argmin}
 %    \begin{macro}{\argmax}
+%    \begin{macro}{\sign}
+%    \begin{macro}{\ind}
 %    \begin{macrocode}
 \DeclareMathOperator{\argmin}{arg\,min}
 \DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\ind}{\mathbbm{1}}
 %    \end{macrocode}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+% \subsection{Sets}
+%    \begin{macro}{\bbN}
+%    \begin{macro}{\bbZ}
+%    \begin{macro}{\bbQ}
+%    \begin{macro}{\bbR}
+%    \begin{macro}{\bbC}
+% Sets are obtained by |\bbR| for the real numbers, and similar for other sets.
+%    \begin{macrocode}
+\newcommand{\bbN}{\mathbb N}
+\newcommand{\bbZ}{\mathbb Z}
+\newcommand{\bbQ}{\mathbb Q}
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbC}{\mathbb C}
+%    \end{macrocode}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+% \subsection{Distributions}
+%    \begin{macro}{\dBeta}
+%    \begin{macro}{\dBern}
+%    \begin{macro}{\dBin}
+%    \begin{macro}{\dF}
+%    \begin{macro}{\dGam}
+%    \begin{macro}{\dInvGam}
+%    \begin{macro}{\dInvW}
+%    \begin{macro}{\dLaplace}
+%    \begin{macro}{\dMN}
+%    \begin{macro}{\dN}
+%    \begin{macro}{\dPo}
+%    \begin{macro}{\dt}
+%    \begin{macro}{\dW}
+%    \begin{macro}{\dWeib}
+% Sets are obtained by |\bbR| for the real numbers, and similar for other sets.
+%    \begin{macrocode}
+\DeclareMathOperator{\dBeta}{Beta}
+\DeclareMathOperator{\dBern}{Bern}
+\DeclareMathOperator{\dBin}{Bin}
+\DeclareMathOperator{\dF}{F}
+\DeclareMathOperator{\dGam}{Gam}
+\DeclareMathOperator{\dInvGam}{InvGam}
+\DeclareMathOperator{\dInvW}{InvW}
+\DeclareMathOperator{\dLaplace}{Laplace}
+\DeclareMathOperator{\dMN}{MN}
+\DeclareMathOperator{\dN}{N}
+\DeclareMathOperator{\dPo}{Po}
+\DeclareMathOperator{\dt}{t}
+\DeclareMathOperator{\dW}{W}
+\DeclareMathOperator{\dWeib}{Weib}
+%    \end{macrocode}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
 %    \end{macro}
 %    \end{macro}
 %

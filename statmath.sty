@@ -16,8 +16,9 @@
 %% LaTeX version 2005/12/01 or later.
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{statmath}
-[2018/03/08 v0.1 Statistical notation and mathematics]
+[2018/03/12 v0.2 Statistical notation and mathematics]
 \RequirePackage{amsmath}
+\RequirePackage{bbm}
 \RequirePackage{bm}%
 
 \DeclareOption{abcbm}{%
@@ -131,18 +132,41 @@
 \newcommand{\bfzero}{\greekbf 0}
 \DeclareMathOperator{\cov}{Cov}
 \DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\MSE}{MSE}
 \DeclareMathOperator{\V}{V}
-\newcommand{\inas}{\overset{a.s.}{\to}}
-\newcommand{\indist}{\overset{d}{\to}}
-\newcommand{\inprob}{\overset{p}{\to}}
+\newcommand{\inas}{\overset{\scriptstyle a.s.}{\longrightarrow}}
+\newcommand{\indist}{\overset{\scriptstyle d}{\longrightarrow}}
+\newcommand{\inprob}{\overset{\scriptstyle p}{\longrightarrow}}
 \DeclareMathOperator{\plim}{plim}
 \DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\vc}{vec}
 \DeclareMathOperator{\vcs}{vecs}
 \DeclareMathOperator{\vch}{vech}
 \DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\argmin}{arg\,min}
 \DeclareMathOperator{\argmax}{arg\,max}
+\DeclareMathOperator{\sign}{sign}
+\DeclareMathOperator{\ind}{\mathbbm{1}}
+\newcommand{\bbN}{\mathbb N}
+\newcommand{\bbZ}{\mathbb Z}
+\newcommand{\bbQ}{\mathbb Q}
+\newcommand{\bbR}{\mathbb R}
+\newcommand{\bbC}{\mathbb C}
+\DeclareMathOperator{\dBeta}{Beta}
+\DeclareMathOperator{\dBern}{Bern}
+\DeclareMathOperator{\dBin}{Bin}
+\DeclareMathOperator{\dF}{F}
+\DeclareMathOperator{\dGam}{Gam}
+\DeclareMathOperator{\dInvGam}{InvGam}
+\DeclareMathOperator{\dInvW}{InvW}
+\DeclareMathOperator{\dLaplace}{Laplace}
+\DeclareMathOperator{\dMN}{MN}
+\DeclareMathOperator{\dN}{N}
+\DeclareMathOperator{\dPo}{Po}
+\DeclareMathOperator{\dt}{t}
+\DeclareMathOperator{\dW}{W}
+\DeclareMathOperator{\dWeib}{Weib}
 \endinput
 %%
 %% End of file `statmath.sty'.
