@@ -18,11 +18,12 @@
 % \iffalse
 %<package>\NeedsTeXFormat{LaTeX2e}
 %<package>\ProvidesPackage{statmath}
-%<package>[2018/03/12 v0.2 Statistical notation and mathematics]
+%<package>[2019/08/16 v0.3 Statistical notation and mathematics]
 %
 %<*driver>
 \documentclass{ltxdoc}
 \usepackage{statmath}
+\setlength\parindent{0pt}
 \EnableCrossrefs
 \CodelineIndex
 \RecordChanges
@@ -84,12 +85,29 @@
 % Lower-case Greek letter: $\bfalpha$\\
 % \DescribeMacro{\bfzero}
 % Bold zero: $\bfzero$\\
-% \DescribeMacro{\cov}
-% Covariance: $\cov(X, Y)$\\
+% \DescribeMacro{\Bias}
+% Bias: $\Bias(\theta)$\\
+% \DescribeMacro{\Corr}
+% Correlation: $\Corr(X, Y)$\\
+% \DescribeMacro{\Cov}
+% Covariance: $\Cov(X, Y)$\\
 % \DescribeMacro{\E}
 % Expectation: $\E(X)$\\
+% \DescribeMacro{\Ebar}
+% Expectation (with bar): $\Ebar(X)$\\
+% \DescribeMacro{\Ehat}
+% Expectation (with hat): $\Ehat(X)$\\
+% \DescribeMacro{\Etilde}
+% Expectation (with tilde): $\Etilde(X)$\\
+% \DescribeMacro{\MSE}
+% Mean squared error: $\MSE(X)$\\
+% \DescribeMacro{\SE}
+% Standard error: $\SE(X)$\\
+%
+% \DescribeMacro{\SEtilde}
+% Standard error (with tilde): $\SEtilde(X)$\\
 % \DescribeMacro{\V}
-% Variance: $\V(X)$\\
+% \noindent Variance: $\V(X)$\\
 % \DescribeMacro{\inas}
 % Convergence almost surely: $X_n \inas X$\\
 % \DescribeMacro{\inprob}
@@ -443,15 +461,38 @@
 %    \end{macro}
 % \subsection{Statistical operators and concepts}
 % Statistical operators for covariance, expectation and variance.
-%    \begin{macro}{\cov}
+%    \begin{macro}{\Bias}
+%    \begin{macro}{\Corr}
+%    \begin{macro}{\Cov}
 %    \begin{macro}{\E}
+%    \begin{macro}{\Ebar}
+%    \begin{macro}{\Ehat}
+%    \begin{macro}{\Etilde}
+%    \begin{macro}{\MSE}
+%    \begin{macro}{\SE}
+%    \begin{macro}{\SEtilde}
 %    \begin{macro}{\V}
 %    \begin{macrocode}
-\DeclareMathOperator{\cov}{Cov}
+\DeclareMathOperator{\Bias}{Bias}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Cov}{Cov}
 \DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\Ebar}{\bar{E}}
+\DeclareMathOperator{\Ehat}{\hat{E}}
+\DeclareMathOperator{\Etilde}{\tilde{E}}
 \DeclareMathOperator{\MSE}{MSE}
+\DeclareMathOperator{\SE}{SE}
+\DeclareMathOperator{\SEtilde}{\widetilde{SE}}
 \DeclareMathOperator{\V}{V}
 %    \end{macrocode}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
+%    \end{macro}
 %    \end{macro}
 %    \end{macro}
 %    \end{macro}
