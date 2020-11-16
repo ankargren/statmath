@@ -114,8 +114,12 @@
 % Convergence in probability: $X_n \inprob X$\\
 % \DescribeMacro{\indist}
 % Convergence in distribution: $X_n \indist X$\\
+% \DescribeMacro{\inmsq}
+% Convergence in mean square: $X_n \inmsq X$\\
 % \DescribeMacro{\plim}
 % Probability limit: $\plim X_n = X$\\
+% \DescribeMacro{\aslim}
+% Almost-sure limit: $\aslim X_n = X$\\
 % \DescribeMacro{\tr}
 % Trace of matrix: $\tr(\bfA)$\\
 % \DescribeMacro{\vc}
@@ -499,13 +503,19 @@
 %    \begin{macro}{\inas}
 %    \begin{macro}{\inprob}
 %    \begin{macro}{\indist}
+%    \begin{macro}{\inmsq}
 %    \begin{macro}{\plim}
+%    \begin{macro}{\aslim}
 %    \begin{macrocode}
 \newcommand{\inas}{\overset{\scriptstyle a.s.}{\longrightarrow}}
 \newcommand{\indist}{\overset{\scriptstyle d}{\longrightarrow}}
 \newcommand{\inprob}{\overset{\scriptstyle p}{\longrightarrow}}
+\newcommand{\inmsq}{\overset{\scriptstyle m}{\longrightarrow}}
 \DeclareMathOperator{\plim}{plim}
+\DeclareMathOperator{\aslim}{aslim}
 %    \end{macrocode}
+%    \end{macro}
+%    \end{macro}
 %    \end{macro}
 %    \end{macro}
 %    \end{macro}
